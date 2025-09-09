@@ -13,7 +13,7 @@ function MainContent() {
       <UserProfile 
         name="John Doe" 
         age={28} 
-        bio="Loves traveling and exploring new cultures. Favorite cities include Paris and Tokyo." 
+        bio="I love to visit New York, Paris, and Tokyo." 
       />
       
       <UserProfile 
