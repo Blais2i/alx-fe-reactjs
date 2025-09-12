@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+// src/UserDetails.jsx
+import { useContext } from 'react';
 import UserContext from './UserContext';
 
 function UserDetails() {

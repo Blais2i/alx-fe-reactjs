@@ -1,4 +1,4 @@
-import React from 'react';
+// src/App.jsx
 import ProfilePage from './ProfilePage';
 import UserContext from './UserContext';
 
