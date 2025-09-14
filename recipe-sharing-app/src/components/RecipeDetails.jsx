@@ -6,19 +6,21 @@ import EditRecipeForm from './EditRecipeForm';
 import DeleteRecipeButton from './DeleteRecipeButton';
 
 const RecipeDetails = () => {
-  // 1. Get the recipeId from the URL parameter
+  // 1. Get the recipeId from the URL parameter (it's a string)
   const { recipeId } = useParams();
-  // 2. Convert the URL parameter (string) to a number for comparison
+  
+  // 2. Convert the URL parameter to a number for comparison
   const numericRecipeId = Number(recipeId);
-  // 3. Find the recipe in the store
+  
+  // 3. Find the recipe in the store using the numeric ID
   const recipe = useRecipeStore((state) =>
-    state.recipes.find((r) => r.id === numericRecipeId)
+    state.recipes.find((r) => r.id === numericRecipeId) // Now comparing number to number
   );
 
-  // 4. Local state to manage whether we are in "edit mode" or "view mode"
+  // 4. Local state to manage edit mode
   const [isEditing, setIsEditing] = useState(false);
 
-  // 5. If the recipe isn't found, show a message
+  // 5. If recipe not found
   if (!recipe) {
     return (
       <div>
@@ -28,26 +30,23 @@ const RecipeDetails = () => {
     );
   }
 
-  // 6. Render the component
   return (
     <div>
       <Link to="/">← Back to All Recipes</Link>
 
       {isEditing ? (
-        // If we are editing, show the form
         <EditRecipeForm
-          recipeId={numericRecipeId}
-          onCancel={() => setIsEditing(false)} // Clicking cancel exits edit mode
+          recipeId={numericRecipeId} // Pass the numeric ID
+          onCancel={() => setIsEditing(false)}
         />
       ) : (
-        // If we are viewing, show the details and action buttons
         <div>
           <h1>{recipe.title}</h1>
           <p>{recipe.description}</p>
           <br />
           <button onClick={() => setIsEditing(true)}>Edit Recipe</button>
           {' '}
-          <DeleteRecipeButton recipeId={numericRecipeId} />
+          <DeleteRecipeButton recipeId={numericRecipeId} /> {/* Pass the numeric ID */}
         </div>
       )}
     </div>
