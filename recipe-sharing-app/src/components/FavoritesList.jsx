@@ -1,7 +1,7 @@
-// src/components/FavoritesList.jsx
+// src/components/FavouritesList.jsx
 import useRecipeStore from '../store/recipeStore';
 
-const FavoritesList = () => {
+const FavouritesList = () => {
   const recipes = useRecipeStore((state) => state.recipes);
   const favorites = useRecipeStore((state) =>
     state.favorites.map((id) => recipes.find((r) => r.id === id))
@@ -24,4 +24,4 @@ const FavoritesList = () => {
   );
 };
 
-export default FavoritesList;
+export default FavouritesList;
