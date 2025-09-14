@@ -6,21 +6,19 @@ import EditRecipeForm from './EditRecipeForm';
 import DeleteRecipeButton from './DeleteRecipeButton';
 
 const RecipeDetails = () => {
-  // 1. Get the recipeId from the URL parameter (it's a string)
   const { recipeId } = useParams();
-
-  // 2. Convert the URL parameter to a number for comparison
   const numericRecipeId = Number(recipeId);
 
-  // 3. Find the recipe in the store using the numeric ID
   const recipe = useRecipeStore((state) =>
     state.recipes.find((r) => r.id === numericRecipeId)
   );
 
-  // 4. Local state to manage edit mode
+  const favorites = useRecipeStore((state) => state.favorites);
+  const addFavorite = useRecipeStore((state) => state.addFavorite);
+  const removeFavorite = useRecipeStore((state) => state.removeFavorite);
+
   const [isEditing, setIsEditing] = useState(false);
 
-  // 5. If recipe not found
   if (!recipe) {
     return (
       <div>
@@ -29,6 +27,16 @@ const RecipeDetails = () => {
       </div>
     );
   }
+
+  const isFavorite = favorites.includes(recipe.id);
+
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      removeFavorite(recipe.id);
+    } else {
+      addFavorite(recipe.id);
+    }
+  };
 
   return (
     <div>
@@ -43,8 +51,12 @@ const RecipeDetails = () => {
         <div>
           <h1>{recipe.title}</h1>
           <p>{recipe.description}</p>
-          <p><strong>ID:</strong> {recipe.id}</p> {/* ✅ Added to satisfy test */}
-          <br />
+          <p><strong>ID:</strong> {recipe.id}</p>
+
+          <button onClick={toggleFavorite} style={{ marginRight: '10px' }}>
+            {isFavorite ? '★ Unfavorite' : '☆ Add to Favorites'}
+          </button>
+
           <button onClick={() => setIsEditing(true)}>Edit Recipe</button>{' '}
           <DeleteRecipeButton recipeId={numericRecipeId} />
         </div>
