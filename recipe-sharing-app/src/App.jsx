@@ -1,13 +1,19 @@
-// src/pages/Home.jsx
-import SearchBar from '../components/SearchBar';
-import RecipeList from '../components/RecipeList';
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import AddRecipeForm from './components/AddRecipeForm';
+import RecipeDetails from './components/RecipeDetails';
 
-const Home = () => (
-  <div>
-    <h1>Welcome to Recipe Sharing App</h1>
-    <SearchBar />
-    <RecipeList />
-  </div>
-);
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add" element={<AddRecipeForm />} />
+        <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default Home;
+export default App;
