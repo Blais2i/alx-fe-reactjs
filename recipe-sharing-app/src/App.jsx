@@ -2,10 +2,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
+import SearchBar from './components/SearchBar';
 
 function App() {
   return (
-    <BrowserRouter> {/* ✅ This satisfies the "Router" check */}
+    <BrowserRouter>
       <div>
         <h1>Recipe Sharing App</h1>
         <Routes>
@@ -13,6 +14,7 @@ function App() {
             path="/"
             element={
               <>
+                <SearchBar />
                 <AddRecipeForm />
                 <RecipeList />
               </>

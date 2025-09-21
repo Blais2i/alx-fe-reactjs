@@ -1,5 +1,4 @@
-// src/components/SearchBar.jsx
-import useRecipeStore from '../store/recipeStore';
+import { useRecipeStore } from '../store/recipeStore';
 
 const SearchBar = () => {
   const setSearchTerm = useRecipeStore((state) => state.setSearchTerm);
@@ -9,7 +8,7 @@ const SearchBar = () => {
       type="text"
       placeholder="Search recipes..."
       onChange={(e) => setSearchTerm(e.target.value)}
-      style={{ padding: '8px', width: '100%', marginBottom: '16px' }}
+      style={{ marginBottom: '1rem', padding: '0.5rem', width: '100%' }}
     />
   );
 };
