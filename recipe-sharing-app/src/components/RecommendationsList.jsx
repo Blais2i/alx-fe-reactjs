@@ -1,18 +1,15 @@
-// src/components/RecommendationsList.jsx
-import useRecipeStore from '../store/recipeStore';
-import { useEffect } from 'react';
+import { useRecipeStore } from '../store/recipeStore';
 
 const RecommendationsList = () => {
   const recommendations = useRecipeStore((state) => state.recommendations);
-  const generateRecommendations = useRecipeStore((state) => state.generateRecommendations);
-
-  useEffect(() => {
-    generateRecommendations();
-  }, [generateRecommendations]);
+  const generateRecommendations = useRecipeStore(
+    (state) => state.generateRecommendations
+  );
 
   return (
     <div>
-      <h2>Recommended for You</h2>
+      <h2>Recommended Recipes</h2>
+      <button onClick={generateRecommendations}>Refresh Recommendations</button>
       {recommendations.length === 0 ? (
         <p>No recommendations yet.</p>
       ) : (

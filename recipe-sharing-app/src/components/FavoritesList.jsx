@@ -1,10 +1,8 @@
-// src/components/FavouritesList.jsx
-import useRecipeStore from '../store/recipeStore';
+import { useRecipeStore } from '../store/recipeStore';
 
-const FavouritesList = () => {
-  const recipes = useRecipeStore((state) => state.recipes);
+const FavoritesList = () => {
   const favorites = useRecipeStore((state) =>
-    state.favorites.map((id) => recipes.find((r) => r.id === id))
+    state.favorites.map((id) => state.recipes.find((r) => r.id === id))
   );
 
   return (
@@ -24,4 +22,4 @@ const FavouritesList = () => {
   );
 };
 
-export default FavouritesList;
+export default FavoritesList;
