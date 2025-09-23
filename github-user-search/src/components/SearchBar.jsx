@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-const SearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
+const SearchBar = ({ onSearch, loading }) => {
+  const [username, setUsername] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim()) {
-      onSearch(query.trim());
+    if (username.trim()) {
+      onSearch(username.trim());
     }
   };
 
@@ -15,13 +15,18 @@ const SearchBar = ({ onSearch }) => {
       <div className="search-container">
         <input
           type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search GitHub users..."
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Enter GitHub username..."
           className="search-input"
+          disabled={loading}
         />
-        <button type="submit" className="search-button">
-          Search
+        <button 
+          type="submit" 
+          className="search-button"
+          disabled={loading}
+        >
+          {loading ? 'Searching...' : 'Search'}
         </button>
       </div>
     </form>
