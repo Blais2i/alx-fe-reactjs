@@ -1,31 +1,7 @@
-import { useState } from 'react';
-import SearchBar from './components/SearchBar';
-import UserDetails from './components/UserDetails';
-import { githubService } from './services/githubAPI';
+import Search from './components/Search';
 import './App.css';
 
 function App() {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  const handleSearch = async (username) => {
-    setLoading(true);
-    setError('');
-    setUser(null);
-
-    try {
-      // Using the required fetchUserData function
-      const userData = await githubService.fetchUserData(username);
-      setUser(userData);
-    } catch (err) {
-      setError(err.message);
-      setUser(null);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <div className="App">
       <header className="App-header">
@@ -34,8 +10,7 @@ function App() {
       </header>
       
       <main className="App-main">
-        <SearchBar onSearch={handleSearch} loading={loading} />
-        <UserDetails user={user} error={error} loading={loading} />
+        <Search />
       </main>
     </div>
   );
