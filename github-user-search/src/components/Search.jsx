@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { fetchUserData } from '../services/githubService';
 
-function SearchBar() {
+function Search() {
   const [username, setUsername] = useState('');
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -36,7 +36,7 @@ function SearchBar() {
       </form>
 
       {loading && <p>Loading...</p>}
-      {error && <p>Looks like we can't find the user.</p>}
+      {error && <p>Looks like we cant find the user</p>}
       {userData && (
         <div>
           <img src={userData.avatar_url} alt={userData.login} width="100" />
@@ -50,4 +50,4 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+export default Search;
