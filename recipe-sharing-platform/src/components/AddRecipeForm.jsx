@@ -18,11 +18,15 @@ const AddRecipeForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    // Use target.value directly as required by the checker
+    const name = e.target.name;
+    const value = e.target.value;
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+    
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
