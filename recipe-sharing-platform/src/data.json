@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?w=400&h=300&fit=crop",
+    "cookingTime": "20 mins",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=300&fit=crop",
+    "cookingTime": "40 mins",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 3,
+    "title": "Vegetable Stir Fry",
+    "summary": "Quick and healthy vegetable stir fry with colorful bell peppers and broccoli.",
+    "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop",
+    "cookingTime": "15 mins",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 4,
+    "title": "Chocolate Lava Cake",
+    "summary": "Decadent chocolate cake with a warm, gooey center that flows like lava.",
+    "image": "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&h=300&fit=crop",
+    "cookingTime": "30 mins",
+    "difficulty": "Medium"
+  },
+  {
+    "id": 5,
+    "title": "Greek Salad",
+    "summary": "Fresh and healthy Mediterranean salad with feta cheese, olives, and vegetables.",
+    "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=300&fit=crop",
+    "cookingTime": "10 mins",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 6,
+    "title": "Beef Bourguignon",
+    "summary": "French beef stew braised in red wine with mushrooms, onions, and bacon.",
+    "image": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?w=400&h=300&fit=crop",
+    "cookingTime": "3 hours",
+    "difficulty": "Hard"
+  }
+]
