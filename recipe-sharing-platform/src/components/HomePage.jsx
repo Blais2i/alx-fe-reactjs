@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import recipeData from '../data.json';
 
 const HomePage = () => {
@@ -59,9 +60,12 @@ const HomePage = () => {
                 </div>
                 
                 {/* View Recipe Button */}
-                <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200">
+                <Link 
+                  to={`/recipe/${recipe.id}`}
+                  className="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+                >
                   View Recipe
-                </button>
+                </Link>
               </div>
             </div>
           ))}
