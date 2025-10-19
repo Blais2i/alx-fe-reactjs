@@ -37,17 +37,30 @@ export default function RegistrationForm() {
     <form onSubmit={handleSubmit}>
       <div>
         <label>Username:</label>
-        <input name="username" value={formData.username} onChange={handleChange} />
+        <input
+          name="username"
+          value={formData.username}
+          onChange={handleChange}
+        />
         {errors.username && <span>{errors.username}</span>}
       </div>
       <div>
         <label>Email:</label>
-        <input name="email" value={formData.email} onChange={handleChange} />
+        <input
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
         {errors.email && <span>{errors.email}</span>}
       </div>
       <div>
         <label>Password:</label>
-        <input name="password" type="password" value={formData.password} onChange={handleChange} />
+        <input
+          name="password"
+          type="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
         {errors.password && <span>{errors.password}</span>}
       </div>
       <button type="submit">Register</button>
