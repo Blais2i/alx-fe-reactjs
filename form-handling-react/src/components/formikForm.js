@@ -16,7 +16,11 @@ export default function FormikForm() {
   };
 
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
       <Form>
         <div>
           <label>Username:</label>
